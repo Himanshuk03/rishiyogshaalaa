@@ -1,0 +1,337 @@
+/* ---------------- Navbar link styles ---------------- */
+.navbar-nav .nav-link {
+    color: #2e3b2c;
+    font-weight: 500;
+    margin: 0 8px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #b02a37; 
+}
+
+/* ---------------- Dropdown menu ---------------- */
+.dropdown-menu {
+    border-radius: 0;
+    border: none;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ---------------- Mobile adjustments ---------------- */
+@media (max-width: 992px) {
+    .navbar-nav {
+        text-align: center;
+    }
+    .btn-danger {
+        display: block;
+        margin: 10px auto;
+    }
+}
+
+/* ---------------- Footer ---------------- */
+.footer {
+    background-color: #000;
+}
+
+.footer a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #fff;
+}
+
+/* ---------------- Social icons ---------------- */
+.social-icons a {
+    margin-top:18px !important;
+    color: white;
+    background-color: #c00202 !important;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;       
+    height: 40px;      
+    font-size: 18px;   
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+/* ---------------- Mobile adjustments for footer ---------------- */
+@media (max-width: 768px) {
+    .footer {
+        text-align: center;
+    }
+    .social-icons {
+        margin-top: 1rem;
+    }
+}
+
+/* --------------------------faq-section---------------------------- */
+.accordion-item {
+    margin-bottom: 10px !important;
+    border-radius: px;
+    overflow: hidden; 
+}
+
+/* -------------------testimonials----------------------- */
+ .testimonial-section .rating-card {
+    border-radius: 10px;
+    background: #fff;
+  }
+
+  .testimonial-section .testimonial-content {
+    border-radius: 10px;
+    background: #fff;
+  }
+
+  .rating-line {
+    border: none;
+    border-top: 2px solid #eee;
+    margin: 8px 0;
+  }
+
+
+.testimonial-section .carousel-control-prev-icon,
+.testimonial-section .carousel-control-next-icon {
+    background-color: rgba(255, 0, 0, 0.5) !important; 
+    border-radius: 50%;
+}
+
+/* ------------ about Teacher's ------------ */
+
+/* Carousel container part bg & padding */
+    .teacher-card img {
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      border-radius: 12px;
+      max-height: 220px;
+      object-fit: contain;
+      width: 75%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .teacher-card:hover img {
+      transform: scale(1.05);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+    }
+
+
+    .teacher-card {
+      padding: 20px 30px;
+      background: #fff;
+      border-radius: 12px;
+      border: 4px solid #333;
+      box-shadow: 0 6px 15px rgb(0 0 0 / 0.15);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-height: 400px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .teacher-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgb(0 0 0 / 0.3);
+    }
+
+    .teacher-carousel {
+      background: #fefefe;
+      padding: 50px 20px;
+    }
+
+    .teacher-carousel .row {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .teacher-carousel .col-md-3 {
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-bottom: 30px;
+    }
+
+    .teacher-card h5 {
+      font-weight: 800;
+      margin-bottom: 6px;
+      margin-top: 0;
+      font-size: 1.2rem;
+      color: #222;
+    }
+
+    .teacher-card p {
+      margin: 0;
+      color: #666;
+      font-size: 1rem;
+      font-style: italic;
+    }
+
+    .teacher-carousel .carousel-control-prev-icon,
+    .teacher-carousel .carousel-control-next-icon {
+      background-color: rgba(192, 2, 2, 0.6);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      background-size: 50% 50%;
+    }
+
+
+    .button {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+  
+    .button button {
+      background-color: #c00202 !important;
+      color: white;
+      border: 2px solid #c00202;
+      padding: 10px 25px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .button button:hover {
+      background-color: white;
+      color: #c00202;
+    }
+
+/* ----------------our Teachers------------------------ */
+.section-bg {
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+  color: white;
+  padding: 60px 20px 80px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.section-bg h2 {
+  font-weight: 700;
+  font-size: 2rem;
+  max-width: 900px;
+  margin: 0 auto 10px;
+  line-height: 1.2;
+}
+
+.section-bg h5 {
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.section-bg p.intro {
+  max-width: 900px;
+  margin: 0 auto 50px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.course-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.course-box {
+  border: 1px solid rgba(255 255 255 / 0.6);
+  border-radius: 20px 10px 20px 10px;
+  background: rgba(0 0 0 / 0.3);
+  padding: 30px 25px;
+  flex: 1 1 300px;
+  max-width: 350px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.course-box p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.btn-course {
+  background-color: #8b212c;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-course:hover {
+  background-color: #b02a36;
+}
+
+@media (max-width: 768px) {
+  .course-boxes {
+    flex-direction: column;
+    align-items: center;
+  }
+  .course-box {
+    max-width: 90%;
+  }
+}
+
+/* --------------------residential ytt------------------ */
+.intro-section {
+  max-width: 900px;
+  margin: 40px auto 60px;
+  padding: 0 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.65;
+}
+
+.intro-section h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #2c6a74;
+  text-align: center;
+  margin-bottom: 0.3em;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+}
+
+.intro-section h3 {
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: #4a8d8f;
+  text-align: center;
+  margin-bottom: 1.2em;
+  font-style: italic;
+}
+
+.intro-section p {
+  font-size: 1.1rem;
+  margin-bottom: 1.3em;
+  text-align: justify;
+  border-left: 4px solid #2c6a74;
+  padding-left: 15px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(44, 106, 116, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.intro-section p:last-child {
+  margin-bottom: 0;
+}
+
+.intro-section p:hover {
+  background-color: #e0f2f1;
+}

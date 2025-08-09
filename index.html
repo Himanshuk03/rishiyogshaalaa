@@ -1,0 +1,1687 @@
+<!-- not written script in React form way, as I created one page as per your said without using any react, angular tailwind, shadCN -->
+ <!-- used all 3 types of css inline......  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rishi Yog Shala</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <style>
+        
+        section.section-bg {
+            position: relative;
+            color: white;
+            padding: 60px 20px 80px;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('https://www.nirvanayogaschoolindia.com/img/banner.webp') no-repeat center center/cover;
+            overflow: hidden;
+        }
+
+        section.section-bg::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.35);
+            z-index: 0;
+        }
+
+
+        section.section-bg>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        h2 {
+            font-weight: 700;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h5 {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+        }
+
+        p.intro {
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* style for course part */
+        .course-box {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 1.25rem 0.625rem 1.25rem 0.625rem;
+            padding: 2rem;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            transition: 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .course-box p {
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .course-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 95px 65px rgba(237, 229, 229, 0.3);
+            cursor: pointer;
+        }
+
+        
+        .btn-course {
+            background-color: #8b212c;
+            border: none;
+            font-weight: 600;
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.5rem;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-course:hover {
+            background-color: #b02a36;
+            color: white;
+        }
+
+        /* -------------our Teachers------------------- */
+        .courses-row {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .course-card {
+            position: relative;
+            background: white;
+            border-radius: 12px;
+            padding: 30px 25px 40px;
+            width: 320px;
+            box-shadow: 0 5px 20px rgb(0 0 0 / 0.1);
+            cursor: pointer;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+            color: #2b2b2b;
+        }
+
+        .course-card:hover {
+            box-shadow: 0 20px 30px rgb(0 0 0 / 0.25);
+        }
+
+        
+        .course-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 12px;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 0;
+        }
+
+        .course-card:hover .course-bg {
+            opacity: 1;
+        }
+
+        
+        .course-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        
+        .course-icon {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 15px rgb(0 0 0 / 0.1);
+        }
+
+        .course-icon img {
+            width: 70px;
+            height: 70px;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            margin-bottom: 18px;
+            font-weight: 700;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 30px;
+            color: #444;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            padding-left: 24px;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .course-card ul li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #8b212c;
+            font-weight: bold;
+        }
+
+        .btn-course {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: #8b212c;
+            color: white;
+            font-weight: 600;
+            border-radius: 8px;
+            border: none;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            user-select: none;
+        }
+
+        .btn-course:hover {
+            background-color: #b02a36;
+        }
+
+        
+        @media (max-width: 1024px) {
+            .courses-row {
+                justify-content: space-around;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .courses-row {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .course-card {
+                width: 90%;
+                max-width: 400px;
+            }
+        }
+
+        /* --------course details------------------ */
+        .course-card {
+            position: relative;
+            overflow: visible;
+            cursor: pointer;
+            background: transparent;
+        }
+
+        .course-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transform: translateX(-100%);
+            transition: transform 0.5s ease;
+            z-index: 0;
+        }
+
+        .course-card:hover .course-bg {
+            transform: translateX(0);
+        }
+
+        .course-content {
+            position: relative;
+            padding-top: 70px;
+            z-index: 1;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: #000;
+            transition: background-color 0.5s ease;
+        }
+
+        .course-card:hover .course-content {
+            background-color: rgba(255, 255, 255, 0);
+            color: #000;
+        }
+
+        .course-card:hover .course-content ul {
+            background-color: rgba(255, 255, 255, 0.6);
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+
+        .course-icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 90px;
+            height: 90px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+            transform: translate(-50%, -50%);
+        }
+
+        .course-icon img {
+            width: 70px;
+            height: 70px;
+        }
+
+        .btn-course {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-course:hover {
+            background-color: #0056b3;
+        }
+
+        /* -------------------residential ytt----------------------- */
+        .intro-section {
+            max-width: 900px;
+            margin: 40px auto 60px;
+            padding: 0 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.65;
+        }
+
+        .intro-section p {
+            font-size: 1.1rem;
+            margin-bottom: 1.0em;
+            text-align: center;
+            border-left: 4px solid #2c6a74;
+            padding-left: 15px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(44, 106, 116, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .intro-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .intro-section p:hover {
+            background-color: #e0f2f1;
+        }
+
+        /* ----------------------4 youtube blocks-------------------- */
+        .youtube-videos {
+            position: relative;
+            width: 100vw !important;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz1fQVRYdNyL3uNQmFb2Sl7OGb_lK7OJ1TaA&s');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .youtube-videos::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.55);
+            z-index: 1;
+        }
+
+        .videos-wrapper {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .video-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .videos-wrapper iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .videos-wrapper iframe:hover {
+            transform: scale(1.05);
+        }
+
+        .video-desc {
+            margin-top: 8px;
+            font-size: 1rem;
+            color: #fff;
+            text-align: center;
+            max-width: 95%;
+        }
+
+        @media (max-width: 768px) {
+            .videos-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* -----------------above youtube block--------------------- */
+        .yoga-intro {
+            width: 100vw;
+            padding: 60px 40px;
+            box-sizing: border-box;
+
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsjadOOxWZJJTRI9aIKGdgEHQ9mmo8UbgTkw&s');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+            text-align: left;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        .yoga-intro::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.55);
+            z-index: 1;
+        }
+
+        .yoga-intro>* {
+            position: relative;
+            z-index: 2;
+            max-width: 100vw;
+            margin-left: 0;
+            margin-right: 0;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .yoga-intro h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.3em;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+        }
+
+        .yoga-intro h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            font-style: italic;
+            margin-bottom: 1.5em;
+            color: #c5e1e7;
+        }
+
+        .yoga-intro p {
+            font-size: 1.1rem;
+            margin-bottom: 1.3em;
+            text-align: justify;
+            color: #ddd;
+            max-width: 100vw;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .yoga-intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* --------------------learn yoga section-------------------------- */
+        .learn-yoga-section {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            gap: 30px;
+            box-sizing: border-box;
+        }
+
+        .learn-yoga-content {
+            flex: 1 1 55%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.65;
+        }
+
+        .learn-yoga-content h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #2c6a74;
+            margin-bottom: 0.8em;
+        }
+
+        .learn-yoga-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1.3em;
+            text-align: justify;
+        }
+
+        .learn-yoga-video {
+            flex: 1 1 40%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 612px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .learn-yoga-video iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            height: auto;
+        }
+
+        .video-caption {
+            margin-top: 8px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #2c6a74;
+            text-align: center;
+        }
+
+        
+        @media (max-width: 768px) {
+            .learn-yoga-section {
+                flex-direction: column;
+                padding: 0 10px;
+            }
+
+            .learn-yoga-content,
+            .learn-yoga-video {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+
+            .learn-yoga-video iframe {
+                max-width: 100%;
+                aspect-ratio: 16 / 9;
+                height: auto;
+            }
+        }
+
+
+        /* ------------image slide part------------------ */
+        .auto-slide-banner {
+            width: 100vw;
+            overflow: hidden;
+            box-sizing: border-box;
+            height: 180px;
+            background-color: #469dd631;
+            margin-bottom: 40px;
+            user-select: none;
+        }
+
+        .slide-track {
+            display: flex;
+            gap: 10px;
+            width: calc(310px * 10);
+            animation: slide-left 20s linear infinite;
+        }
+
+        .auto-slide-banner:hover .slide-track {
+            animation-play-state: paused;
+        }
+
+        .slide-track img {
+            width: 300px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        
+        @keyframes slide-left {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-1550px);
+            }
+        }
+
+        /* ------------------Introduction main at top--------------------- */
+        .yoga-school-intro {
+            width: 100vw;
+            padding: 60px 20px;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+            color: white;
+            text-align: left;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 100vw;
+        }
+
+        .yoga-school-intro .bg-slide {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            animation: fadeBG 16s infinite;
+            z-index: 0;
+        }
+
+        .yoga-school-intro .bg-slide:nth-child(1) {
+            background-image: url("introbg1.jpg");
+            animation-delay: 0s;
+        }
+
+        .yoga-school-intro .bg-slide:nth-child(2) {
+            background-image: url("introbg2.jpg");
+            animation-delay: 4s;
+        }
+
+        .yoga-school-intro .bg-slide:nth-child(3) {
+            background-image: url("introbg3.jpg");
+            animation-delay: 8s;
+        }
+
+        .yoga-school-intro .bg-slide:nth-child(4) {
+            background-image: url("introbg4.jpg");
+            animation-delay: 12s;
+        }
+
+        .yoga-school-intro .bg-slide:nth-child(4) {
+            background-image: url("introbg5.jpg");
+            animation-delay: 12s;
+        }
+
+        @keyframes fadeBG {
+            0% {
+                opacity: 0;
+            }
+
+            8% {
+                opacity: 1;
+            }
+
+            25% {
+                opacity: 1;
+            }
+
+            33% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .yoga-school-intro::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.55);
+            z-index: 1;
+        }
+
+        .yoga-school-intro .intro-content {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            z-index: 2;
+        }
+
+        .yoga-school-intro h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.3em;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+        }
+
+        .yoga-school-intro h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1.2em;
+            font-style: italic;
+            color: #dcdcdc;
+        }
+
+        .yoga-school-intro p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.4em;
+            color: #eee;
+        }
+    </style>
+</head>
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="logo1.jpg" alt="Logo" height="90" class="me-2">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">HOME</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">YOGA
+                            COURSES</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Course 1</a></li>
+                            <li><a class="dropdown-item" href="#">Course 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">ONLINE
+                            COURSES</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Online 1</a></li>
+                            <li><a class="dropdown-item" href="#">Online 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown">RETREATS</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Retreat 1</a></li>
+                            <li><a class="dropdown-item" href="#">Retreat 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown">WORKSHOP</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Workshop 1</a></li>
+                            <li><a class="dropdown-item" href="#">Workshop 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">TEACHERS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">VENUE</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">BLOG</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">CONTACT</a></li>
+                </ul>
+            </div>
+
+            <div class="d-none d-lg-block">
+                <a href="#" class="btn btn-danger px-4">SIGN IN</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- -----------Introduction of yoga main------------------ -->
+    <section class="yoga-school-intro">
+        <!-- Background slides vaalaa part -->
+        <div class="bg-slide"></div>
+        <div class="bg-slide"></div>
+        <div class="bg-slide"></div>
+        <div class="bg-slide"></div>
+
+        <div class="intro-content">
+            <h2>Yoga Alliance Certified Yoga School in India</h2>
+            <h3>Welcome to Nirvana Yoga School - A Sanctuary for the Soul in Rishikesh</h3>
+
+            <p>
+                Nirvana Yoga School is more than just another school for teacher training; it is an ancient healing art
+                set in the heart of Rishikesh along the sacred river Ganges, and elevated by the spirit of Himalayan
+                whispers. These ancient healing arts are listed under the Yoga Alliance, USA, and we are among the most
+                trusted traditional yoga schools in India.
+            </p>
+
+            <p>
+                Our vision is to honestly share the timeless yogic wisdom along with sincerity, care and devotion. From
+                every breath, posture, and chant, we invite you into a life that feels complete, serene, and very much
+                in alignment.
+            </p>
+
+            <p>
+                Our courses are very authentic and hold true to the ancient yogic disciplines, but also respect the
+                vastly personal journey of every individual. Whether you join us for a 200-hour training, a soulful
+                retreat, or a panchakarma restorative, the focal point remains steady: to provide the space for a
+                meaningful transformation, where yogis learn, grow, and achieve balance.
+            </p>
+
+            <p>
+                With a wise and compassionate teacher team at a yoga school in Rishikesh, our residential and online
+                attendance programs take very good care of each student. Each class is an opportunity to explore your
+                inner life, surrounded by a gentle support matrix of community, tradition, and nature.
+            </p>
+
+            <p>
+                Nirvana Yoga School welcomes seekers from around the globe to walk with us on this journey-not as
+                students but as co-travellers. If your heart leads you to Rishikesh for the real yoga experience, we
+                stand ready to receive you with open arms.
+            </p>
+        </div>
+    </section>
+
+
+
+    <!-- ------------------image slide part automatic--------------- -->
+    <section class="auto-slide-banner mt-5 mb-5">
+        <div class="slide-track">
+            <img src="slide1.jpg" alt="Yoga Slide 1" />
+            <img src="slide2.jpg" alt="Yoga Slide 2" />
+            <img src="slide3.jpg" alt="Yoga Slide 3" />
+            <img src="slide4.jpg" alt="Yoga Slide 4" />
+            <img src="slide5.jpg" alt="Yoga Slide 5" />
+            <!-- Duplicate images below i have used -->
+            <img src="slide1.jpg" alt="Yoga Slide 1" />
+            <img src="slide2.jpg" alt="Yoga Slide 2" />
+            <img src="slide3.jpg" alt="Yoga Slide 3" />
+            <img src="slide4.jpg" alt="Yoga Slide 4" />
+            <img src="slide5.jpg" alt="Yoga Slide 5" />
+        </div>
+    </section>
+
+
+    <!-- ----------learn yoga section--------------------- -->
+    <section class="learn-yoga-section">
+        <div class="learn-yoga-content">
+            <h2>Why Learn Yoga in Rishikesh - Where Earth, Sky, and Spirit Meet</h2>
+            <p>
+                There is a sacred rhythm in Rishikesh that cannot be explained but must be felt. It lives in the
+                crispness of the morning air, hums in the silence between the ringing of temple bells, and moves
+                rhythmically in the gentle flow of the river Ganga. For centuries, seekers from all over the world have
+                come here in the drawing of something beyond words. To learn yoga in Rishikesh is to become part of that
+                ancient stream of wisdom, healing, and inner peace.
+            </p>
+            <p>
+                Yoga in India is another way of remembering who you truly are. Sitting here in the serene Himalayan
+                foothills and being immersed in the spiritual undercurrent of this holy land, your yoga practice
+                transcends the physical. The asanas start to stir something within; the breathing turns from unconscious
+                to a prayer; the meditation deepens into stillness, as if the very mountains are meditating with you.
+            </p>
+        </div>
+        <div class="learn-yoga-video">
+            <iframe src="https://www.youtube.com/embed/_NOezBf-LYs"
+                title="Why Learning Yoga in Rishikesh is Life-Changing | Gurudev Dhruvaji" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+            <p class="video-caption">Why Learning Yoga in Rishikesh is Life-Changing | Gurudev Dhruvaji</p>
+        </div>
+
+    </section>
+
+
+    <!-- ----------------above youtube block-------------------------- -->
+    <div class="text-center mb-4 mt-5">
+        <h6 class="text-danger fw-bold">The Best Yoga School in India - As taught by the ancient masters of yoga
+        </h6>
+    </div>
+    <section class="yoga-intro">
+        <div class="text-center mb-4 mt-1">
+            <h2 class="fw-bold">
+                Learn Real & Authentic Yoga - Rediscover the Ancient Roots of Yogic Wisdom
+            </h2>
+        </div>
+        <p>
+            Yoga is more than a mere practice; it is truly an honourable inheritance. It did not begin as a mere form of
+            exercise but rather as a way of life handed down from one generation to another through word of mouth, heart
+            to heart, in the still woods and along the snowy courses of hills to ashrams.
+        </p>
+
+        <p>
+            The earliest Vedic traces of such knowledge are preserved in the Rig Veda, one of humanity's oldest sacred
+            texts, created in the language of spirit - Sanskrit. Being one of the best yoga centers in Rishikesh, we
+            respect this lineage through the teachings of Vedic Yogic teachings, which is considered the very source and
+            highest most philosophy of yoga rooted in India's spiritual heritage.
+        </p>
+
+        <p>
+            We intend to preserve this great knowledge in its purity, glory, and depth. The teachers of our school are
+            very deeply rooted in tradition and compassion to guide students to not merely learn yoga but to live it.
+            You will be engaged in practices that go far beyond the mere physical postures: sacred mantras, yogic
+            philosophy, breathwork, and meditative silence, tracing the footsteps of the ancient sages.
+        </p>
+
+        <p>
+            Here in Rishikesh, the birthplace of yoga, working on yoga in Rishikesh becomes something sacred. With the
+            chants accompanying you in the early hours of dawn or performing asanas under the gaze of the Himalayas, you
+            will begin feeling what the forebearers had once felt, plastered across eternity: connection, peace, and
+            purpose.
+        </p>
+
+        <p>
+            We welcome students from all over the globe, wishing to study in a yoga center in Rishikesh, to return to
+            the roots - to learn yoga in India as it was meant to be. Under our guidance, you will deepen your
+            experience, greater than knowledge, and integrate these ancient teachings into life for well-being, clarity,
+            and inner harmony.
+        </p>
+
+        <p>
+            Come, experience the real essence of yoga - with sincerity, spirit, and soul.
+        </p>
+    </section>
+
+
+
+    <!-- ----------------------4 youtube blocks------------------------ -->
+    <section class="youtube-videos">
+        <div class="videos-wrapper">
+
+            <div class="video-box">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/hQhCO5Pc7Og"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <p class="video-desc">How to do Revolved Side Angle Pose | Alignment & Adjustment</p>
+            </div>
+
+            <div class="video-box">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/3OSg2B10-4E"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <p class="video-desc">Step-by-Step Guide to Entering and Exiting Ashtanga Asanas</p>
+            </div>
+
+            <div class="video-box">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/BMwoqRpDAtU"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <p class="video-desc">What is Karma Yoga | Gurudev Dhruvaji</p>
+            </div>
+
+            <div class="video-box">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/dfH_eDxY-Ys"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <p class="video-desc">The Ultimate Guide to Understanding Nadis and Chakras</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ----------------------residential ytt----------------------- -->
+    <section class="intro-section mt-5">
+        <div class="intro-wrapper">
+            <div class="text-center mb-3">
+                <h6 class="text-danger fw-bold">TESTIMONIAL</h6>
+                <h2 class="fw-bold">What Students Say About Nirvana Yoga School</h2>
+            </div>
+
+            <p>
+                The yoga teacher training in Rishikesh at Nirvana Yoga School is beyond mere certifications. These are
+                life-changing journeys into the heart of yoga. The programs are set in the spiritual hub of Rishikesh
+                and are Yoga Alliance-accredited. The teacher training courses at our school seamlessly blend ancient
+                wisdom with thoughtful, holistic guidance.
+            </p>
+
+            <p>
+                With several years of collective experience, our committed teachers impart knowledge as well as warmth
+                and personal insight to every class. Whether you are coming in fresh to our 200-hour foundational
+                training or entering into more advanced modules, every course is designed with the intention to meet you
+                at your level.
+            </p>
+
+            <p>
+                The training curriculum is enriched with great details, representing a holistic study of different types
+                of Hatha and Ashtanga Vinyasa, pranayama, and philosophy. Every teacher imparts their unique experience,
+                thereby creating a vibrant learning atmosphere full of support.
+            </p>
+
+            <p>
+                If ever one is seeking authentic instruction in yoga in India, Nirvana Yoga School invites all to step
+                into a very real space where transformation is not just taught but truly lived.
+            </p>
+        </div>
+    </section>
+
+    <!-- -------------course details------------------------------ -->
+    <div class="courses-row mt-5">
+
+        <!-- card first -->
+        <div class="course-card me-4">
+            <div class="course-bg"
+                style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ44dBPgLUIMVKe7HQuZRyJiTYstea1ypPcg&s');">
+            </div>
+            <div class="course-content">
+                <div class="course-icon">
+                    <img src="yogshaalaaStamp.jpg" alt="RYT 200" />
+                </div>
+                <h3>200 Hour Hatha Ashtanga Vinyasa Yoga Teacher Training in Rishikesh India</h3>
+                <ul>
+                    <li>Duration: 25 Days</li>
+                    <li>Level: Beginner to intermediate level</li>
+                    <li>Certification  RYT 200, Yoga Alliance</li>
+                    <li>Fee: From 649 USD</li>
+                </ul>
+                <button class="btn-course">Course Details</button>
+            </div>
+        </div>
+
+        <!-- card 2 -->
+        <div class="course-card me-4">
+            <div class="course-bg"
+                style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_mZt1YISABVpK-bwKaxGF8tUGzV_CP8S5LA&s');">
+            </div>
+            <div class="course-content">
+                <div class="course-icon">
+                    <img src="yogshaalaaStamp.jpg" alt="RYT 200" />
+                </div>
+                <h3>200 Hour Ayurveda & Hatha Yoga Teacher Training in Rishikesh, India</h3>
+                <ul>
+                    <li>Duration: 25 Days</li>
+                    <li>Level: Beginner to intermediate level</li>
+                    <li>Certification - RYT-200, Yoga Alliance</li>
+                    <li>Fee: From 649 USD</li>
+                </ul>
+                <button class="btn-course">Course Details</button>
+            </div>
+        </div>
+
+        <!-- card 3 -->
+        <div class="course-card">
+            <div class="course-bg"
+                style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgNdNMDFSJ9ppcWoQ-SvhjaFDaM5biFSV7Kw&s');">
+            </div>
+            <div class="course-content">
+                <div class="course-icon">
+                    <img src="yogshaalaaStamp.jpg" alt="RYT 200" />
+                </div>
+                <h3>200 Hour Meditation Yoga Nidra & Hatha Yoga Teacher Training in Rishikesh India</h3>
+                <ul>
+                    <li>Duration: 25 Days</li>
+                    <li>Level: Beginner to intermediate level</li>
+                    <li>Certification - RYT-200, Yoga Alliance</li>
+                    <li>Fee: From 649 USD</li>
+                </ul>
+                <button class="btn-course">Course Details</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- --------------------our Teachers part------------------------------ -->
+    <div class="text-center mb-4 mt-5">
+        <h6 class="text-danger fw-bold">Our Spiritual Indian Gurus</h6>
+        <h2 class="fw-bold">
+            Our Teachers
+        </h2>
+    </div>
+    <section class="section-bg">
+        <div class="container">
+            <h2>Yoga Alliance Certification - Globally Recognized Yoga Training</h2>
+            <h5>RYS 200, RYS 300, RYS 500</h5>
+            <p class="intro">
+                Nirvana Yoga School is an RYS 200, RYS 300, and RYS 500 registered yoga school situated in Rishikesh,
+                with Yoga Alliance USA-strictly considered one of the best globally respected bodies in yoga education.
+                Our certification allows you to teach yoga with confidence anywhere in the world. Each course is
+                designed very carefully with proper traditional knowledge, safety standards, and personal
+                transformation. Here, certifications are a little more than just a paper; one truly becomes a yogi!
+                Begin your journey as a certified yoga teacher with international-level credentials right here in the
+                heart of Rishikesh, India.
+            </p>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="course-box">
+                        <p>Our RYS 200 curriculum is ideal for students who are new to yoga or wish to expand their
+                            knowledge of the discipline. The principles of yoga philosophy, anatomy, asana, pranayama,
+                            meditation, and teaching style are covered in this curriculum. After completing this course,
+                            you will be able to teach yoga sessions in a safe and effective manner.</p>
+                        <button class="btn btn-course mt-auto">Course Details</button>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="course-box">
+                        <p>Our RYS 300 course is for people who have already finished an RYS 200 course and wish to
+                            advance their knowledge and teaching skills. This curriculum delves into more advanced
+                            topics including yoga sequencing, modifications, and therapeutic applications. After
+                            completing this course, you will have a better grasp of yoga practice and the ability to
+                            teach with confidence and experience.</p>
+                        <button class="btn btn-course mt-auto">Course Details</button>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="course-box">
+                        <p>Our RYS 500 course is a combination of RYS 200 + RYS 300 courses. The curriculum often
+                            includes extensive study and practice on a wide range of topics from beginner to advanced
+                            level. After completing this course, you will have received the highest level of yoga
+                            teacher training possible and will be completely prepared to teach advanced yoga.</p>
+                        <button class="btn btn-course mt-auto">Course Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ------------------about Teacher's---------------------- -->
+    <div id="teacherCarousel" class="carousel slide teacher-carousel" data-bs-ride="carousel">
+        <div class="d-flex justify-content-center mb-5 mt-5">
+            <button class="btn btn-danger border border-light" style="border-width: 2px;">
+                Read About Teachers
+            </button>
+        </div>
+        <div class="carousel-inner ">
+            <div class="carousel-item active">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="teacher-card">
+                            <img src="https://www.nirvanayogaschoolindia.com/img/teacher/amit.webp" alt="Amit Rana"
+                                class="img-fluid w-75 mx-auto" style="max-height: 220px;" />
+                            <h5>Amit Rana</h5>
+                            <p>12+ years of teaching experience</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="teacher-card">
+                            <img src="https://www.nirvanayogaschoolindia.com/img/teacher/naveen1.webp"
+                                alt="Naveen Mingwal" class="img-fluid w-75 mx-auto" style="max-height: 220px;" />
+                            <h5>Naveen Mingwal</h5>
+                            <p>8+ years of teaching experience</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="teacher-card">
+                            <img src="https://www.nirvanayogaschoolindia.com/img/teacher/mannji1.webp"
+                                alt="Yogi Mahesh Ji" class="img-fluid w-75 mx-auto" style="max-height: 220px;" />
+                            <h5>Yogi Mahesh Ji</h5>
+                            <p>7+ years of teaching experience</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="teacher-card">
+                            <img src="https://www.nirvanayogaschoolindia.com/img/teacher/bhawana.webp"
+                                alt="Bhawana Bulatia" class="img-fluid w-75 mx-auto" style="max-height: 220px;" />
+                            <h5>Bhawana Bulatia</h5>
+                            <p>12+ years of Corporate Trainer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="teacher-card">
+                            <img src="https://www.nirvanayogaschoolindia.com/img/teacher/aishwarya.webp" alt="Teacher 5"
+                                class="img-fluid w-75 mx-auto" style="max-height: 220px;" />
+                            <h5>Aishwarya Upadhyay</h5>
+                            <p>5+ years of teaching experience</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="teacher-card">
+                            <img src="https://www.nirvanayogaschoolindia.com/img/teacher/jeet-thapliyal.webp"
+                                alt="Teacher 6" class="img-fluid w-75 mx-auto" style="max-height: 220px;" />
+                            <h5>Jeet Thapliyal</h5>
+                            <p>9 years of teaching experience</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="teacher-card">
+                            <img src="https://www.nirvanayogaschoolindia.com/img/teacher/gurudev.webp" alt="Teacher 7"
+                                class="img-fluid w-75 mx-auto" style="max-height: 220px;" />
+                            <h5>Gurudev Dhruvaji</h5>
+                            <p>30+ years of teaching experience </p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="teacher-card">
+                            <img src="https://www.nirvanayogaschoolindia.com/img/teacher/akshay.webp" alt="Teacher 8"
+                                class="img-fluid w-75 mx-auto" style="max-height: 220px;" />
+                            <h5>Akshay Vashisht</h5>
+                            <p>7+ years of teaching experience</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#teacherCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#teacherCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+
+    <!-- -------------------testimonials vaalaa part------------------ -->
+    <section class="py-5 testimonial-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h6 class="text-danger fw-bold">TESTIMONIAL</h6>
+                <h2 class="fw-bold">What Students Say About Nirvana Yoga School</h2>
+            </div>
+
+            <div class="row align-items-center mb-4">
+                <div class="col-lg-4">
+                    <div class="rating-card p-4 shadow-sm h-100">
+                        <div class="d-flex align-items-center mb-2">
+                            <img src="googleIcon.jpg" width="30" class="me-2">
+                            <span class="fw-bold">Google Rating</span>
+                        </div>
+                        <hr class="rating-line">
+                        <div class="d-flex align-items-center">
+                            <span class="text-warning me-1">★★★★★</span>
+                            <span class="fw-bold">5/5 Stars</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial Carousel part -->
+                <div class="col-lg-8">
+                    <div id="testimonialCarousel1" class="carousel slide" data-bs-interval="false">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="testimonial-content p-4 shadow-sm h-100">
+                                    <div class="row g-3">
+                                        <div class="col-md-5">
+                                            <img src="https://www.nirvanayogaschoolindia.com/admin/uploads/yoga/yoga-12-06-2025-1749669201-Ole%20Netek.webp"
+                                                class="img-fluid rounded" alt="Testimonial 1">
+                                        </div>
+                                        <div class="col-md-7">
+                                            <h5 class="fw-bold mb-1">Ole Netek</h5>
+                                            <div class="text-warning mb-2">★★★★★</div>
+                                            <h6 class="fw-bold">Well Organized & Very Professional</h6>
+                                            <p>Namaste! 🙏 I've just completed the 200 hours Hatha Ashtanga Teacher
+                                                training.
+                                                The program was well organized & the school is very professional in
+                                                terms of
+                                                structure, responding & helping out.</p>
+                                            <a href="#" class="text-danger fw-bold">Read more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- this is my 2nd slide -->
+                            <div class="carousel-item">
+                                <div class="testimonial-content p-4 shadow-sm h-100">
+                                    <div class="row g-3">
+                                        <div class="col-md-5">
+                                            <img src="https://www.nirvanayogaschoolindia.com/admin/uploads/yoga/yoga-13-06-2025-1749755523-Valentina%20Catenacci.webp"
+                                                class="img-fluid rounded" alt="Testimonial 1B">
+                                        </div>
+                                        <div class="col-md-7">
+                                            <h5 class="fw-bold mb-1">Valentina Catenacci</h5>
+                                            <div class="text-warning mb-2">★★★★★</div>
+                                            <h6 class="fw-bold">An amazing place to make meaningful connections</h6>
+                                            <p>Nirvana Yoga school is an amazing place where you will learn so much more
+                                                than what they state in their program! An amazing place to make
+                                                meaningful connections and grow!</p>
+                                            <a href="#" class="text-danger fw-bold">Read more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel1"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon bg-dark rounded-circle p-2"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel1"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon bg-dark rounded-circle p-2"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="row align-items-center">
+                <div class="col-lg-4">
+                    <div class="rating-card p-4 shadow-sm h-100">
+                        <div class="d-flex align-items-center mb-2">
+                            <img src="tripAdvisor.jpg" width="30" class="me-2">
+                            <span class="fw-bold">Trip Advisor Rating</span>
+                        </div>
+                        <hr class="rating-line">
+                        <div class="d-flex align-items-center">
+                            <span class="text-success me-1">★★★★★</span>
+                            <span class="fw-bold">5/5 Stars</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial carousel part-->
+                <div class="col-lg-8">
+                    <div id="testimonialCarousel2" class="carousel slide" data-bs-interval="false">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="testimonial-content p-4 shadow-sm h-100">
+                                    <div class="row g-3">
+                                        <div class="col-md-5">
+                                            <img src="https://www.nirvanayogaschoolindia.com/admin/uploads/yoga/yoga-12-06-2025-1749668963-Agathe%20De%20Vargas.webp"
+                                                class="img-fluid rounded" alt="Testimonial 2">
+                                        </div>
+                                        <div class="col-md-7">
+                                            <h5 class="fw-bold mb-1">Agathe De Vargas</h5>
+                                            <div class="text-success mb-2">★★★★★</div>
+                                            <h6 class="fw-bold">Merci merci et encore merci pour ce 200TTC</h6>
+                                            <p>Je souhaite prendre le temps de détailler complètement mon avis sur
+                                                Nirvana Yoga
+                                                school. Première car ils méritent enteretainment loge qui va suivre...
+                                            </p>
+                                            <a href="#" class="text-danger fw-bold">Read more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 2nd slide -->
+                            <div class="carousel-item">
+                                <div class="testimonial-content p-4 shadow-sm h-100">
+                                    <div class="row g-3">
+                                        <div class="col-md-5">
+                                            <img src="https://www.nirvanayogaschoolindia.com/admin/uploads/yoga/yoga-12-06-2025-1749671949-Eve%20Lesage.webp"
+                                                class="img-fluid rounded" alt="Testimonial 2B">
+                                        </div>
+                                        <div class="col-md-7">
+                                            <h5 class="fw-bold mb-1">Eve Leage</h5>
+                                            <div class="text-success mb-2">★★★★★</div>
+                                            <h6 class="fw-bold">Very grateful for this training</h6>
+                                            <p>I recently completed 300 hour Yoga Teacher Training at Nirvana, and it
+                                                was an incredible journey.The instructors were so supportive, and truly
+                                                passionate about yoga.
+                                            </p>
+                                            <a href="#" class="text-danger fw-bold">Read more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel2"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon bg-dark rounded-circle p-2"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel2"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon bg-dark rounded-circle p-2"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="row align-items-center mt-4">
+                <div class="col-lg-4">
+                    <div class="rating-card p-4 shadow-sm h-100">
+                        <div class="d-flex align-items-center mb-2">
+                            <img src="trustPilot.jpg" width="30" class="me-2" alt="TrustPilot">
+                            <span class="fw-bold">TrustPilot Rating</span>
+                        </div>
+                        <hr class="rating-line">
+                        <div class="d-flex align-items-center">
+                            <span class="text-success me-1">★★★★★</span>
+                            <span class="fw-bold">4.9/5 Stars</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial carousel part-->
+                <div class="col-lg-8">
+                    <div id="testimonialCarousel3" class="carousel slide" data-bs-interval="false">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="testimonial-content p-4 shadow-sm h-100">
+                                    <div class="row g-3">
+                                        <div class="col-md-5">
+                                            <img src="https://www.nirvanayogaschoolindia.com/admin/uploads/yoga/yoga-12-06-2025-1749669069-Ujjwala%20Prasad.webp"
+                                                class="img-fluid rounded" alt="Ujjwala Prasad">
+                                        </div>
+                                        <div class="col-md-7">
+                                            <h5 class="fw-bold mb-1">Ujjwala Prasad</h5>
+                                            <div class="text-success mb-2">★★★★★</div>
+                                            <h6 class="fw-bold">Amazing experience with Nirvana Yoga</h6>
+                                            <p>The instructors are highly knowledgeable, the atmosphere is peaceful, and
+                                                I truly
+                                                enjoyed every session. Highly recommend!</p>
+                                            <a href="#" class="text-danger fw-bold">Read more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 2nd slide part-->
+                            <div class="carousel-item">
+                                <div class="testimonial-content p-4 shadow-sm h-100">
+                                    <div class="row g-3">
+                                        <div class="col-md-5">
+                                            <img src="https://www.nirvanayogaschoolindia.com/admin/uploads/yoga/yoga-12-06-2025-1749672478-Swati%20Snigdha.webp"
+                                                class="img-fluid rounded" alt="Ujjwala 2">
+                                        </div>
+                                        <div class="col-md-7">
+                                            <h5 class="fw-bold mb-1">Swati Snigdha</h5>
+                                            <div class="text-success mb-2">★★★★★</div>
+                                            <h6 class="fw-bold">Nothing short of life-changing</h6>
+                                            <p>Joining Nirvana Yoga School has been nothing short of life-changing. The
+                                                500-hour teacher training pushed me out of my comfort zone while helping
+                                                me connect deeper with myself physically, mentally, and spiritually. The
+                                                teachers were super</p>
+                                            <a href="#" class="text-danger fw-bold">Read more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel3"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon bg-dark rounded-circle p-2"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel3"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon bg-dark rounded-circle p-2"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section part below -->
+    <section class="faq-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h6 class="text-danger fw-bold">Q&A</h6>
+                <h2 class="fw-bold">What Students Say About Nirvana Yoga School</h2>
+            </div>
+            <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" style="background-color: #b02a37; color:white;" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faq1">
+                            How much does it cost to learn yoga in India?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yoga teacher training in India generally costs between $700 and $1800...
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" style="background-color: #b02a37; color:white;" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faq2">
+                            Which certification is best for yoga teachers?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yoga Alliance USA certification is one of the most considered courses...
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" style="background-color: #b02a37; color:white;" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faq3">
+                            Is a yoga teacher a good career?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Teaching yoga can create a wonderfully balanced career...
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" style="background-color: #b02a37; color:white;" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faq4">
+                            What is the requirement to join a yoga school in Rishikesh?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            You need not have any prior advanced experiences...
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" style="background-color: #b02a37; color:white;" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faq5">
+                            Why is Rishikesh called the yoga capital of the world?
+                        </button>
+                    </h2>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            It's a place where ancient sages practiced and taught yoga...
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" style="background-color: #b02a37; color:white;" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faq6">
+                            What is Yoga Alliance certification?
+                        </button>
+                    </h2>
+                    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yoga Alliance USA sets global standards for yoga education...
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" style="background-color: #b02a37; color:white;" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faq7">
+                            Can a beginner study yoga in Rishikesh?
+                        </button>
+                    </h2>
+                    <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Definitely, Rishikesh is an excellent choice for beginners...
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" style="background-color: #b02a37; color:white;" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faq8">
+                            Why choose Nirvana Yoga School?
+                        </button>
+                    </h2>
+                    <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Combining authentic Vedic teachings with personalized care...
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" style="background-color: #b02a37; color:white;" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faq9">
+                            What kind of meals do you provide?
+                        </button>
+                    </h2>
+                    <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Offering the choice of three nourishing sattvic meals...
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" style="background-color: #b02a37; color:white;" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faq10">
+                            Can I get vegan or gluten-free food at the school?
+                        </button>
+                    </h2>
+                    <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            We are happy to provide for dietary needs...
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer part below -->
+    <footer class="footer bg-black text-light pt-5 pb-4">
+        <div class="container">
+            <div class="row">
+
+                <!-- Our Location -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="fw-bold mb-3">Our Location</h5>
+                    <p><i class="fa-solid fa-location-dot fa-lg me-2"></i> Tapovan, Rishikesh, India</p>
+                    <p><i class="fa fa-phone fa-sm me-2"></i> +91 8218564835</p>
+                    <p><i class="fa-brands fa-whatsapp fa-lg me-2"></i> +91 8218564835</p>
+                    <p><i class="fa fa-envelope me-2"></i> nirvanayogaschool@gmail.com</p>
+
+                    <!-- Social Media Icons -->
+                    <div class="mt-4 social-icons">
+                        <a href="#" class="social-icon me-1"
+                            style="color: white; background-color: #c00202; border-radius: 50%; padding: 8px 12px 8px;"><i
+                                class="fa-brands fa-instagram"></i></a>
+
+                        <a href="#" class="social-icon me-1"
+                            style="color: white; background-color: #c00202; border-radius: 50%; padding: 8px 13px 8px;"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+
+                        <a href="#" class="social-icon me-1"
+                            style="color: white; background-color: #c00202; border-radius: 50%; padding: 8px 9px 8px;"><i
+                                class="fa-brands fa-youtube"></i></a>
+
+                        <a href="#" class="social-icon me-1"
+                            style="color: white; background-color: #c00202; border-radius: 50%; padding: 8px 12px 8px;"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+
+                        <a href="#" class="social-icon me-1"
+                            style="color: white; background-color: #c00202; border-radius: 50%; padding: 8px 11px 8px;"><i
+                                class="fa-brands fa-pinterest"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled ">
+                        <li><i class="fa fa-chevron-right mb-3 me-2"></i> <a href="#">About Us</a></li>
+                        <li><i class="fa fa-chevron-right mb-3 me-2"></i> <a href="#">Become An Affiliate</a></li>
+                        <li><i class="fa fa-chevron-right mb-3 me-2"></i> <a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Course Links -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="fw-bold mb-3">Course Links</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-chevron-right mb-3 me-2"></i> <a href="#">Yoga Teacher Training Courses</a>
+                        </li>
+                        <li><i class="fa fa-chevron-right mb-3 me-2"></i> <a href="#">Kundalini Yoga Teacher Training
+                                Courses</a>
+                        </li>
+                        <li><i class="fa fa-chevron-right me-2"></i> <a href="#">Online Yoga Teacher Training
+                                Courses</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Google Map -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="fw-bold mb-3">Google Map</h5>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.650454880667!2d78.31899217524694!3d30.124744274876864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39091754c2b53d4b%3A0x8c21ecf1a0b9e0e!2sNirvana%20Yoga%20School!5e0!3m2!1sen!2sin!4v1700000000000"
+                        width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+<!-- not written in ReactJs script form, as I created one page as per your said without using any react, angular tailwind, shadCN -->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
