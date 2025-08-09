@@ -18,16 +18,9 @@ install bootstrap also and write inside head tag <link href="https://cdn.jsdeliv
 git clone https://github.com/Himanshuk03/rishiyogshaalaa.git
 
 ## Step 2: Navigate into the project folder
-bash
-Copy
-Edit
 cd rishiyogshaalaa
 
 ## Step 3: Install http-server (if you don’t have it already
-
-bash
-Copy
-Edit
 npm install -g http-server
 
 ## Step 4: type in project cmd below-
